@@ -1,7 +1,8 @@
 document.title = 'TaskSpace';
 //MVC
+
 // Model
-let todos=[];
+let todos = [];
 let todosstr = localStorage.getItem('list');
 let todosarr = JSON.parse(todosstr);
 if (Array.isArray(todosarr)) {
@@ -36,7 +37,6 @@ function removetodo(idtodelete) {
 }
 
 // View
-// document.body.style.backgroundImage = 
 document.body.style.fontFamily = '"Roboto Mono", monospace';
 function render() {
     todolist.innerHTML = '';
@@ -45,25 +45,29 @@ function render() {
         todoe.innerText = todo.title;
         const todoed = document.createElement('div');
         todoed.innerText = todo.duedate;
-        todoe.appendChild(todoed);
         todoe.style = 'margin-top:8px';
         todoe.style.display = 'flex';
-        todoe.style.justifyContent = 'space-evenly';
+        todoe.style.flexWrap = 'wrap';
         todoe.style.backgroundColor = 'antiquewhite';
         todoe.style.color = 'black';
+        todoe.style.paddingLeft = '0.5vw';
         todoed.style.color = 'black';
+        todoed.style.marginLeft = 'auto';
+        todoed.style.marginRight = 'auto';
+        todoed.style.marginTop = '0';
+        todoed.style.marginBottom = '0';
         todoe.style.fontWeight = 'bold';
+        todoe.appendChild(todoed);
         const deletebtn = document.createElement('button');
         deletebtn.innerText = 'Delete';
         deletebtn.style.fontSize = 'medium';
         deletebtn.style.border = '2px solid black';
+        deletebtn.style.marginRight = '3vw';
         todoe.appendChild(deletebtn);
         deletebtn.id = todo.id;
         deletebtn.onclick = deletetodo;
         const todolist = document.getElementById('todolist');
         todolist.appendChild(todoe);
-
-
     });
 }
 
