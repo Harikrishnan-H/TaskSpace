@@ -1,0 +1,32 @@
+body {
+    background-image: url("bgi.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1,
+div,
+p {
+    color: antiquewhite;
+}
+
+@media screen and (max-width : 830px) {
+    body {
+        background-image: url("bgi4.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+}
+
+.hborder:hover {
+    border: 2px solid black;
+}
+
+#foot {
+
+    margin-top: 20px;
+    font-size: x-small;
+    color: white;
+}
